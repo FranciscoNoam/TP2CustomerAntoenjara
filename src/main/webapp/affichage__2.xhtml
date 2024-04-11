@@ -3,19 +3,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets">
-    <h:head>
-        <title>Application &gt; affichage__2</title>
-    </h:head>
 
-    <h:body>
-        <h1>Application &gt; affichage__2</h1>
-        Les nombres : <br/>
-        <ui:repeat value="#{bean_.nombresSuivants}" var="n" varStatus="status">
-            #{n + 1}#{! status.last ? ', ' : ''}
-        </ui:repeat>
-        <h:form>
-            <br/>
-            <h:link outcome="formulaire__2?faces-redirect=true" value="Saisir un autre nombre"/>
-        </h:form>
-    </h:body>
+    <ui:composition template="./WEB-INF/templates/template_defaut.xhtml">
+        <ui:param name="titre" value="affichage__2"/>
+        <ui:param name="numEx" value="affichage__2"/>
+        <!--<ui:define name="top">
+            TP PRG > Exercice 1
+        </ui:define>-->
+
+        <ui:define name="content">
+            <h1>Application &gt; affichage__2</h1>
+            Les nombres : <br/>
+            <ui:repeat value="#{bean_.nombresSuivants}" var="n" varStatus="status">
+                #{n + 1}#{! status.last ? ', ' : ''}
+            </ui:repeat>
+            <h:form>
+                <br/>
+                <h:link outcome="formulaire__2?faces-redirect=true" value="Saisir un autre nombre"/>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+
+
 </html>

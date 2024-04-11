@@ -4,24 +4,34 @@
       xmlns:h="jakarta.faces.html"
       xmlns:ui="jakarta.faces.facelets"
       xmlns:f="jakarta.faces.core">
-    
-    <f:metadata>
-        <f:viewParam name="nb" value="#{bean_.nombre}"/>
-    </f:metadata>
-    
-    <h:head>
-        <title>Application &gt; affichage__3</title>
-    </h:head>
 
-    <h:body>
-        <h1>Application &gt; affichage__3</h1>
-        Les nombres : <br/>
-        <ui:repeat value="#{bean_.nombresSuivants}" var="n" varStatus="status">
-            #{n + 1}#{! status.last ? ', ' : ''}
-        </ui:repeat>
-        <h:form>
-            <br/>
-            <h:link outcome="formulaire__3?faces-redirect=true" value="Saisir un autre nombre"/>
-        </h:form>
-    </h:body>
+    <ui:composition template="./WEB-INF/templates/template_defaut.xhtml">
+
+        <ui:define name="metadata">
+            <f:metadata>
+                <f:viewParam name="nb" value="#{bean_.nombre}"/>
+            </f:metadata>
+        </ui:define>
+
+        <ui:param name="titre" value="affichage__3"/>
+        <ui:param name="numEx" value="affichage__3"/>
+        <!--<ui:define name="top">
+            TP PRG > Exercice 4
+        </ui:define>-->
+
+        <ui:define name="content">
+            <h1>Application &gt; affichage__3</h1>
+            Les nombres : <br/>
+            <ui:repeat value="#{bean_.nombresSuivants}" var="n" varStatus="status">
+                #{n + 1}#{! status.last ? ', ' : ''}
+            </ui:repeat>
+            <h:form>
+                <br/>
+                <h:link outcome="formulaire__3?faces-redirect=true" value="Saisir un autre nombre"/>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+
+
 </html>
