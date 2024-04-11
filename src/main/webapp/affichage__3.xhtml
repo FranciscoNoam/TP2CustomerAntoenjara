@@ -10,18 +10,18 @@
     </f:metadata>
     
     <h:head>
-        <title>Application&gt;affichage__3</title>
+        <title>Application &gt; affichage__3</title>
     </h:head>
 
     <h:body>
-        <h1>Application&gt;affichage__3</h1>
+        <h1>Application &gt; affichage__3</h1>
         Les nombres : <br/>
         <ui:repeat value="#{bean_.nombresSuivants}" var="n" varStatus="status">
             #{n + 1}#{! status.last ? ', ' : ''}
         </ui:repeat>
         <h:form>
             <br/>
-            <h:link outcome="formulaire_3?faces-redirect=true" value="Saisir un autre nombre"/>
+            <h:link outcome="formulaire__3?faces-redirect=true" value="Saisir un autre nombre"/>
         </h:form>
     </h:body>
 </html>

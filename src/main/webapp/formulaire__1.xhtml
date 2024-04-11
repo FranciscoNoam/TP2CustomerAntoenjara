@@ -13,13 +13,15 @@
             </ui:define>
 
             <ui:define name="content">
-                <h1>Application&gt;formulaire__1</h1>
+                <h1>Application &gt; formulaire__1</h1>
 
                 <h:form>
                     <h:outputLabel value="Entrez un nombre" for="nombre"/>
                     <h:inputText id="nombre" value="#{bean.nombre}"/>
                     <h:commandButton value="Valider" action="affichage__1"/>
-                    <h:message for="nombre"/>
+                     <p> 
+                        <h:message for="nombre"/>
+                    </p>
 
                 </h:form>
             </ui:define>
